@@ -6,10 +6,10 @@ export default defineType({
   title: 'Episode',
   fields: [
     defineField({
-        name: 'episodeNumber',
-        type: 'number',
-        title: 'Episode Number',
-      }),
+      name: 'episodeNumber',
+      type: 'number',
+      title: 'Episode Number',
+    }),
     defineField({
       name: 'question',
       type: 'string',
@@ -26,15 +26,21 @@ export default defineType({
       title: 'Answer Link',
     }),
     defineField({
-        name: 'solvedBy',
-        title: 'Solved by',
-        type: 'reference',
-        to: {type: 'host'},
-      }),
+      name: 'askedBy',
+      title: 'Asked by',
+      type: 'reference',
+      to: {type: 'host'},
+    }),
     defineField({
-        name: 'spotifyId',
-        type: 'string',
-        title: 'Spotify Episode ID',
-      }),
+      name: 'solvedBy',
+      title: 'Solved by',
+      type: 'reference',
+      to: {type: 'host'},
+    }),
+    defineField({
+      name: 'spotifyId',
+      type: 'string',
+      title: 'Spotify Episode ID',
+    }),
   ],
 })
