@@ -1,0 +1,10 @@
+query Episodes {
+	allEpisode {
+		_id
+		episodeNumber
+		question
+		answer
+		answerLink
+		spotifyId
+	}
+}

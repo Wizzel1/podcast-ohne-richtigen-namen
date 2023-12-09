@@ -1,0 +1,6 @@
+query Hosts {
+	allHost {
+		_id
+		name
+	}
+}
