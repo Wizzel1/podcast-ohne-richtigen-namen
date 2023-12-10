@@ -1,0 +1,5 @@
+query AllEpisodes {
+	allEpisode(sort: { episodeNumber: ASC }) {
+		episodeNumber
+	}
+}

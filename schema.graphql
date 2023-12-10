@@ -227,6 +227,7 @@ type Episode implements Document {
   _updatedAt: DateTime
   answer: String
   answerLink: String
+  askedBy: Host
   episodeNumber: Float
   question: String
   solvedBy: Host
@@ -244,6 +245,7 @@ input EpisodeFilter {
   _updatedAt: DatetimeFilter
   answer: StringFilter
   answerLink: StringFilter
+  askedBy: HostFilter
   episodeNumber: FloatFilter
   question: StringFilter
   solvedBy: HostFilter
