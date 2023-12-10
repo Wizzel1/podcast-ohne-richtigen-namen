@@ -8,12 +8,11 @@
 </script>
 
 {#if item}
-	<div class="episode-body">
-		<h3>{item.question}</h3>
-		
-		<p>Antwort:</p>
+	<div class="flex flex-col place-content-center my-8 sm:mx-5 mx-20">
+		<h3 class="block">{item.question}</h3>
+
+		<p class="m-0">Antwort:</p>
 		<a href={item.answerLink} target="_blank" rel="noreferrer noopener">{item.answer}</a>
-		
 
 		{#if item.solvedBy}
 			<p>Gelöst von <a href="/hosts/{item.solvedBy._id}">{item.solvedBy.name}</a></p>
@@ -32,25 +31,3 @@
 		></iframe>
 	</div>
 {/if}
-
-<style>
-	.episode-body {
-		margin-left: 3rem;
-		margin-right: 3rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.episode-body h1 {
-		margin: 0;
-	}
-
-	.episode-body p {
-		margin: 0;
-	}
-
-	.episode-body iframe {
-		margin-top: 1rem;
-	}
-</style>
