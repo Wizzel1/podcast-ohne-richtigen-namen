@@ -5,8 +5,6 @@
 
 	$: ({ AllEpisodes } = data);
 	$: episodes = $AllEpisodes.data?.allEpisode ?? [];
-
-	$: console.log(episodes);
 </script>
 
 <ul role="list">
@@ -21,3 +19,9 @@
 		</li>
 	{/each}
 </ul>
+
+<div class="w-full flex justify-center">
+	<button class="w-auto" on:click={async () => AllEpisodes.loadNextPage({ limit: 2, offset: 0 })}
+		>Load more</button
+	>
+</div>
