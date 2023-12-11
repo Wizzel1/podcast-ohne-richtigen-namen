@@ -7,6 +7,11 @@
 	$: item = $EpisodeById.data?.allEpisode[0];
 </script>
 
+<svelte:head>
+	{#if item}
+		<title>Folge {item.episodeNumber} - {item.question}</title>
+	{/if}
+</svelte:head>
 {#if item}
 	<div class="flex justify-center">
 		<div class="flex flex-col max-w-2xl">

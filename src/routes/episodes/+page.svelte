@@ -7,6 +7,10 @@
 	$: episodes = $AllEpisodes.data?.allEpisode ?? [];
 </script>
 
+<svelte:head>
+	<title>Po(r)N Episoden</title>
+</svelte:head>
+
 <ul role="list">
 	{#each episodes as item}
 		<li>
