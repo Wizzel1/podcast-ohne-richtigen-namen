@@ -1,5 +1,6 @@
-query AllEpisodes {
-	allEpisode(sort: { number: ASC }) {
+query AllEpisodes($limit: Int = 2, $offset: Int = 0) {
+	allEpisode(sort: { number: ASC }, limit: $limit, offset: $offset) @paginate {
 		number
+		title
 	}
 }
