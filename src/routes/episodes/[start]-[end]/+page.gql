@@ -1,0 +1,6 @@
+query EpisodeRange($start: Float, $end: Float) {
+	allEpisode(where: { episodeNumber: { gte: $start, lte: $end } }, sort: { episodeNumber: ASC }) {
+		question
+		episodeNumber
+	}
+}
