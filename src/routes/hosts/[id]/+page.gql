@@ -1,7 +1,9 @@
 query PostsByAuthor($id: ID!) {
-	allEpisode(where: { solvedBy: { _id: { eq: $id } } }, sort: { episodeNumber: ASC }) {
+	allEpisode(where: { _id: { eq: $id } }, sort: { number: ASC }) {
 		_id
-		episodeNumber
-		question
+		number
+		questions {
+			question
+		}
 	}
 }

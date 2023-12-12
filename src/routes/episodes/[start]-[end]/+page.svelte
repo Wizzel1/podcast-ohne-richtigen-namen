@@ -15,7 +15,7 @@
 				href="/episodes/{item.episodeNumber}"
 			>
 				<p class="m-0">{item.episodeNumber}</p>
-                <p>{item.question}</p>
+				<p>{item.question}</p>
 			</a>
 		</li>
 	{/each}
