@@ -38,9 +38,9 @@ export default defineType({
       to: {type: 'host'},
     }),
     defineField({
-      name: 'spotifyId',
-      type: 'string',
-      title: 'Spotify Episode ID',
+      name: 'spotifyUrl',
+      type: 'url',
+      title: 'Spotify Episode URL',
     }),
   ],
 })

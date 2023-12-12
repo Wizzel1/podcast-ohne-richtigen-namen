@@ -231,7 +231,7 @@ type Episode implements Document {
   episodeNumber: Float
   question: String
   solvedBy: Host
-  spotifyId: String
+  spotifyUrl: String
 }
 
 input EpisodeFilter {
@@ -249,7 +249,7 @@ input EpisodeFilter {
   episodeNumber: FloatFilter
   question: StringFilter
   solvedBy: HostFilter
-  spotifyId: StringFilter
+  spotifyUrl: StringFilter
 }
 
 input EpisodeSorting {
@@ -263,7 +263,7 @@ input EpisodeSorting {
   answerLink: SortOrder
   episodeNumber: SortOrder
   question: SortOrder
-  spotifyId: SortOrder
+  spotifyUrl: SortOrder
 }
 
 type File {
