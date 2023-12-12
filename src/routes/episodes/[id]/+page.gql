@@ -3,7 +3,7 @@ query EpisodeById($id: Float!) {
 		question
         answer
         answerLink
-        spotifyId
+        spotifyUrl
 		episodeNumber
         solvedBy {
 			_id

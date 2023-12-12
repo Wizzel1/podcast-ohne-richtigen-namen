@@ -1,5 +1,5 @@
 query AllEpisodes {
-	allEpisode(limit: 2, sort: { episodeNumber: ASC }) @paginate {
+	allEpisode(sort: { episodeNumber: ASC }) {
 		episodeNumber
 	}
 }
