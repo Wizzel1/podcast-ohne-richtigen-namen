@@ -225,13 +225,10 @@ type Episode implements Document {
 
   """Date the document was last modified"""
   _updatedAt: DateTime
-  answer: String
-  answerLink: String
-  askedBy: Host
-  episodeNumber: Float
-  question: String
-  solvedBy: Host
+  number: Float
+  questions: [Question]
   spotifyUrl: String
+  title: String
 }
 
 input EpisodeFilter {
@@ -243,13 +240,9 @@ input EpisodeFilter {
   _rev: StringFilter
   _type: StringFilter
   _updatedAt: DatetimeFilter
-  answer: StringFilter
-  answerLink: StringFilter
-  askedBy: HostFilter
-  episodeNumber: FloatFilter
-  question: StringFilter
-  solvedBy: HostFilter
+  number: FloatFilter
   spotifyUrl: StringFilter
+  title: StringFilter
 }
 
 input EpisodeSorting {
@@ -259,11 +252,9 @@ input EpisodeSorting {
   _rev: SortOrder
   _type: SortOrder
   _updatedAt: SortOrder
-  answer: SortOrder
-  answerLink: SortOrder
-  episodeNumber: SortOrder
-  question: SortOrder
+  number: SortOrder
   spotifyUrl: SortOrder
+  title: SortOrder
 }
 
 type File {
@@ -488,6 +479,57 @@ input PostSorting {
   title: SortOrder
 }
 
+type Question implements Document {
+  """Date the document was created"""
+  _createdAt: DateTime
+
+  """Document ID"""
+  _id: ID
+  _key: String
+
+  """Current document revision"""
+  _rev: String
+
+  """Document type"""
+  _type: String
+
+  """Date the document was last modified"""
+  _updatedAt: DateTime
+  answer: String
+  answerLink: String
+  askedBy: Host
+  question: String
+  solvedBy: Host
+}
+
+input QuestionFilter {
+  """Apply filters on document level"""
+  _: Sanity_DocumentFilter
+  _createdAt: DatetimeFilter
+  _id: IDFilter
+  _key: StringFilter
+  _rev: StringFilter
+  _type: StringFilter
+  _updatedAt: DatetimeFilter
+  answer: StringFilter
+  answerLink: StringFilter
+  askedBy: HostFilter
+  question: StringFilter
+  solvedBy: HostFilter
+}
+
+input QuestionSorting {
+  _createdAt: SortOrder
+  _id: SortOrder
+  _key: SortOrder
+  _rev: SortOrder
+  _type: SortOrder
+  _updatedAt: SortOrder
+  answer: SortOrder
+  answerLink: SortOrder
+  question: SortOrder
+}
+
 type RootQuery {
   Author(
     """Author document ID"""
@@ -509,6 +551,10 @@ type RootQuery {
     """Post document ID"""
     id: ID!
   ): Post
+  Question(
+    """Question document ID"""
+    id: ID!
+  ): Question
   SanityFileAsset(
     """SanityFileAsset document ID"""
     id: ID!
@@ -562,6 +608,15 @@ type RootQuery {
     sort: [PostSorting!]
     where: PostFilter
   ): [Post!]!
+  allQuestion(
+    """Max documents to return"""
+    limit: Int
+
+    """Offset at which to start returning documents from"""
+    offset: Int
+    sort: [QuestionSorting!]
+    where: QuestionFilter
+  ): [Question!]!
   allSanityFileAsset(
     """Max documents to return"""
     limit: Int

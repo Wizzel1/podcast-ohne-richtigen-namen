@@ -6,37 +6,27 @@ export default defineType({
   title: 'Episode',
   fields: [
     defineField({
-      name: 'episodeNumber',
+      name: 'number',
       type: 'number',
-      title: 'Episode Number',
+      title: 'Number',
     }),
     defineField({
-      name: 'question',
+      name: 'title',
       type: 'string',
-      title: 'Question',
+      title: 'Title',
     }),
     defineField({
-      name: 'answer',
-      type: 'string',
-      title: 'Answer',
+      name: 'questions',
+      type: 'array',
+      title: 'Questions',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'question'}],
+        },
+      ],
     }),
-    defineField({
-      name: 'answerLink',
-      type: 'url',
-      title: 'Answer Link',
-    }),
-    defineField({
-      name: 'askedBy',
-      title: 'Asked by',
-      type: 'reference',
-      to: {type: 'host'},
-    }),
-    defineField({
-      name: 'solvedBy',
-      title: 'Solved by',
-      type: 'reference',
-      to: {type: 'host'},
-    }),
+ 
     defineField({
       name: 'spotifyUrl',
       type: 'url',
