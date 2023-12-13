@@ -5,17 +5,6 @@
 
 	$: ({ AllEpisodes } = data);
 	$: episodes = $AllEpisodes.data?.allEpisode ?? [];
-
-	$: chunkedEpisodes = chunkify(episodes);
-
-	function chunkify(data: { episodeNumber: number | null }[]) {
-		const chunkedEpisodes = [];
-		for (let i = 1; i < data.length; i += 10) {
-			const index = i == 1 ? i - 1 : i;
-			chunkedEpisodes.push(data.slice(index, i + 10));
-		}
-		return chunkedEpisodes;
-	}
 </script>
 
 <svelte:head>
@@ -23,19 +12,24 @@
 </svelte:head>
 
 <div class="grid grid-cols-3 lg:grid-cols-4 gap-4 p-4 m-5">
-	{#each chunkedEpisodes as episodeList}
-		{@const firstItem = episodeList[0]}
+	{#each episodes as episode, i}
+		<a class="w-full" href="/episodes/{episode.number}">
+			<div class="flex border rounded-md justify-center">
+				<p class="m-0 p-4">{episode.title}</p>
+			</div>
+		</a>
+		<!-- {@const firstItem = episode}
 		{@const lastItem = episodeList[episodeList.length - 1]}
 		<a class="w-full" href="/episodes/{firstItem.episodeNumber}-{lastItem.episodeNumber}">
 			<div class="flex border rounded-md justify-center">
 				<p class="m-0 p-4">{firstItem.episodeNumber} - {lastItem.episodeNumber}</p>
 			</div>
-		</a>
+		</a> -->
 	{/each}
 </div>
-
-<!-- <div class="w-full flex justify-center">
-	<button class="w-auto" on:click={async () => AllEpisodes.loadNextPage({ limit: 2, offset: 0 })}
+{JSON.stringify($AllEpisodes, null, 2)}
+<div class="w-full flex justify-center">
+	<button class="w-auto" on:click={async () => AllEpisodes.loadNextPage({ limit: 2 })}
 		>Load more</button
 	>
-</div> -->
+</div>
