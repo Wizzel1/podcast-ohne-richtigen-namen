@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from './$houdini';
+	import type { PageData } from '../[id]/$houdini';
 
 	export let data: PageData;
 

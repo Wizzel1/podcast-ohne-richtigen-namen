@@ -1,6 +1,0 @@
-query QuestionByAuthor($id: ID!) {
-	allQuestion(where: { solvedBy: { _id: { eq: $id } } }) {
-		_id
-		question
-	}
-}

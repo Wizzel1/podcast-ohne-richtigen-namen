@@ -45,7 +45,7 @@
 
 			<div class="mt-10">
 				{#if question?.solvedBy}
-					<p>Gelöst von <a href="/hosts/{question?.solvedBy._id}">{question?.solvedBy.name}</a></p>
+					<p>Gelöst von <a href="/hosts/{question?.solvedBy.name?.toLowerCase()}">{question?.solvedBy.name}</a></p>
 				{:else}
 					<p>Nicht gelöst.</p>
 				{/if}
