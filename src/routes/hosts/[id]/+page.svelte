@@ -3,21 +3,21 @@
 
 	export let data: PageData;
 
-	$: ({ PostsByAuthor } = data);
-	$: episodes = $PostsByAuthor.data?.allEpisode ?? [];
+	$: ({ QuestionByAuthor } = data);
+	$: questions = $QuestionByAuthor.data?.allQuestion ?? [];
 </script>
 
 <h2>Gelöste Rätsel:</h2>
 
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-	{#each episodes as episode}
+	{#each questions as question}
 		<a
 			class="flex flex-col justify-around border border-solid rounded p-4 m-0 text-center hover:bg-gray-600"
-			href="/episodes/{episode.episodeNumber}"
+			href="/episodes/{question._id}"
 		>
-			<p class="text-xl font-semibold">#{episode.episodeNumber}</p>
+			<!-- <p class="text-xl font-semibold">#{question.number}</p> -->
 			<div>
-				{episode.question}
+				{question.question}
 			</div>
 		</a>
 	{/each}

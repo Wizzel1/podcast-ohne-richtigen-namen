@@ -1,13 +1,16 @@
 query EpisodeById($id: Float!) {
-	allEpisode(where: { episodeNumber: { eq: $id } }) {
-		question
-        answer
-        answerLink
-        spotifyUrl
-		episodeNumber
-        solvedBy {
-			_id
-			name
+	allEpisode(where: { number: { eq: $id } }) {
+		spotifyUrl
+		number
+		title
+		questions {
+			question
+			answer
+			answerLink
+			solvedBy {
+				_id
+				name
+			}
 		}
 	}
 }
