@@ -12,10 +12,9 @@
 		<li>
 			<a
 				class="block p-4 m-5 border border-solid border-stone-400 rounded-md hover:bg-sky-700 hover:cursor-pointer hover:no-underline"
-				href="/episodes/{item.episodeNumber}"
+				href="/episodes/{item.number}"
 			>
-				<p class="m-0">{item.episodeNumber}</p>
-                <p>{item.question}</p>
+				<p class="m-0">{item.number}</p>
 			</a>
 		</li>
 	{/each}

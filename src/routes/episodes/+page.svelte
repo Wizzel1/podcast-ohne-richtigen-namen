@@ -8,9 +8,9 @@
 
 	$: chunkedEpisodes = chunkify(episodes);
 
-	function chunkify(data: { episodeNumber: number | null }[]) {
+	function chunkify(data: { number: number | null }[]) {
 		const chunkedEpisodes = [];
-		for (let i = 1; i < data.length; i += 10) {
+		for (let i = 0; i < data.length; i += 10) {
 			const index = i == 1 ? i - 1 : i;
 			chunkedEpisodes.push(data.slice(index, i + 10));
 		}
@@ -26,9 +26,9 @@
 	{#each chunkedEpisodes as episodeList}
 		{@const firstItem = episodeList[0]}
 		{@const lastItem = episodeList[episodeList.length - 1]}
-		<a class="w-full" href="/episodes/{firstItem.episodeNumber}-{lastItem.episodeNumber}">
+		<a class="w-full" href="/episodes/{firstItem.number}-{lastItem.number}">
 			<div class="flex border rounded-md justify-center">
-				<p class="m-0 p-4">{firstItem.episodeNumber} - {lastItem.episodeNumber}</p>
+				<p class="m-0 p-4">{firstItem.number} - {lastItem.number}</p>
 			</div>
 		</a>
 	{/each}
