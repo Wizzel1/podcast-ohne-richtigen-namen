@@ -1,10 +1,7 @@
 <script lang="ts">
-	import type { PageData } from './$houdini';
+	export let data;
 
-	export let data: PageData;
-
-	$: ({ EpisodeRange } = data);
-	$: episodes = $EpisodeRange.data?.allEpisode ?? [];
+	$: ({ episodes } = data);
 </script>
 
 <ul role="list">
