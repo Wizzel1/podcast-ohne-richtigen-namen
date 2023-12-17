@@ -1,6 +1,0 @@
-query QuestionByAuthor($name: String!) {
-	allQuestion(where: { solvedBy: { name: { matches: $name } } }) {
-		_id
-		question
-	}
-}

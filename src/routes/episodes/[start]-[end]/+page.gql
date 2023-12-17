@@ -1,5 +1,0 @@
-query EpisodeRange($start: Float, $end: Float) {
-	allEpisode(where: { number: { gte: $start, lte: $end } }, sort: { number: ASC }) {
-		number
-	}
-}

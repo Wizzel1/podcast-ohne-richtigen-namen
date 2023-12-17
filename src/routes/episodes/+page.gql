@@ -1,5 +1,0 @@
-query AllEpisodes {
-	allEpisode(sort: { number: ASC }) {
-		number
-	}
-}
