@@ -1,10 +1,7 @@
 <script lang="ts">
-	import type { PageData } from './$houdini';
+	export let data;
 
-	export let data: PageData;
-
-	$: ({ AllEpisodes } = data);
-	$: episodes = $AllEpisodes.data?.allEpisode ?? [];
+	$: ({ episodes } = data);
 
 	$: chunkedEpisodes = chunkify(episodes);
 
