@@ -6,7 +6,10 @@ export const load = async ({ params }) => {
 	const episodes = await sanityClient.fetch<Episode[]>(`
     *[_type == "episode" && number >= ${start} && number <= ${end}] | order(number){
         number,
-        title
+        title,
+        questions[]->{
+          question
+        }
       }
     `);
 	return {
