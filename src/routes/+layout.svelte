@@ -1,8 +1,13 @@
 <script lang="ts">
 	import '../app.css';
 </script>
+
 <div class="flex flex-col items-center mt-4">
-	<enhanced:img class="max-w-[120px] rounded-xl" src="../lib/assets/podcast-ohne-richtigen-namen-logo.jpg" alt="" />
+	<enhanced:img
+		class="max-w-[120px] rounded-xl"
+		src="../lib/assets/podcast-ohne-richtigen-namen-logo.jpg"
+		alt=""
+	/>
 	<h1 class="text-xl font-semibold mx-2 my-5">Podcast ohne (richtigen) Namen</h1>
 </div>
 
@@ -12,6 +17,9 @@
 	<a href="/ranking">Rangliste</a>
 	<a target="_blank" rel="noreferrer noopener" href="https://podcastohnerichtigennamen.de/shop/"
 		>Merch Shop</a
+	>
+	<a target="_blank" rel="noreferrer noopener" href="https://www.patreon.com/podcastohnenamen"
+		>Patreon</a
 	>
 </nav>
 
