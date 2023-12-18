@@ -9,6 +9,7 @@
 <nav class="flex justify-around my-5 mx-10">
 	<a href="/">Home</a>
 	<a href="/episodes">Episoden</a>
+	<a href="/ranking">Rangliste</a>
 	<a target="_blank" rel="noreferrer noopener" href="https://podcastohnerichtigennamen.de/shop/"
 		>Merch Shop</a
 	>
