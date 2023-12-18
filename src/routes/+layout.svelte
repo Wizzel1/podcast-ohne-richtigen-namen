@@ -1,13 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 </script>
-
 <div class="flex flex-col items-center mt-4">
-	<img
-		class="max-w-[120px] rounded-xl"
-		src="https://images.podigee-cdn.net/1400x,sPRLkYRRBW1cKURu4hNSAHa7eCfSJmk0ZX2oahz_yrGs=/https://main.podigee-cdn.net/uploads/u2838/ad6a8a9a-f913-4216-a093-8a9fee6e3d35.jpg"
-		alt=""
-	/>
+	<enhanced:img class="max-w-[120px] rounded-xl" src="../lib/assets/podcast-ohne-richtigen-namen-logo.jpg" alt="" />
 	<h1 class="text-xl font-semibold mx-2 my-5">Podcast ohne (richtigen) Namen</h1>
 </div>
 
