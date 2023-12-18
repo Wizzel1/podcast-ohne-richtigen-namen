@@ -14,7 +14,7 @@
 			<a href="/episodes/{number - 1}">{'<'}</a>
 		</button>
 	</div>
-	<h2 class="text-3xl font-bold text-center">Folge #{number} {title}</h2>
+	<h2 class="text-3xl font-bold text-center">#{number} {title}</h2>
 	<div>
 		<div>
 			<button>
@@ -61,13 +61,16 @@
 </div>
 
 {#if spotifyUrl}
-	<iframe
-		title="Spotify Embed"
-		style="border-radius:12px"
-		src="https://open.spotify.com/embed/{new URL(spotifyUrl).pathname}?utm_source=generator&theme=0"
-		width="100%"
-		height="152"
-		loading="lazy"
-		frameBorder="0"
-	></iframe>
+	<div class="flex justify-center my-11">
+		<iframe
+			title="Spotify Embed"
+			style="border-radius:12px"
+			src="https://open.spotify.com/embed/{new URL(spotifyUrl)
+				.pathname}?utm_source=generator&theme=0"
+			width="80%"
+			height="152"
+			loading="lazy"
+			frameBorder="0"
+		></iframe>
+	</div>
 {/if}

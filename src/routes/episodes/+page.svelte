@@ -24,7 +24,7 @@
 		{@const firstItem = episodeList[0]}
 		{@const lastItem = episodeList[episodeList.length - 1]}
 		<a class="w-full" href="/episodes/{firstItem.number}-{lastItem.number}">
-			<div class="flex border rounded-md justify-center">
+			<div class="flex border-2 rounded-md justify-center">
 				<p class="m-0 p-4">{firstItem.number} - {lastItem.number}</p>
 			</div>
 		</a>
