@@ -25,16 +25,16 @@
 </div>
 
 <div class="flex justify-center">
-	<div class="flex flex-col divide-y max-w-[80%] min-w-1/2">
+	<div class="flex flex-col divide-y max-w-[80%] lg:max-w-[60%] md:min-w-1/2">
 		{#if questions}
 			{#each questions as question, index}
-				<div class="flex flex-col p-5">
+				<div class="flex flex-col py-5">
 					<p class="text-xl font-medium mb-3">Frage {index + 1}:</p>
-					<p class="mb-8">{question?.question}</p>
+					<p class="mb-8 md:mx-8">{question?.question}</p>
 
 					<p class="text-xl font-medium mb-3">Antwort:</p>
 					<a
-						class="w-fit text-blue-400 mb-8"
+						class="w-fit text-blue-400 mb-8 md:mx-8 hover:underline"
 						href={question?.answerLink}
 						target="_blank"
 						rel="noreferrer noopener">{question?.answer}</a
@@ -43,15 +43,15 @@
 					<div class="">
 						<p class="text-xl font-medium mb-3">Ergebnis:</p>
 						{#if question?.solvedBy}
-							<p>
+							<p class="md:mx-8">
 								Gelöst von <a
-									class="text-blue-400"
+									class="text-blue-400 hover:underline"
 									href="/hosts/{question?.solvedBy.name?.toLowerCase()}"
 									>{question?.solvedBy.name}</a
 								>
 							</p>
 						{:else}
-							<p>Nicht gelöst.</p>
+							<p class="md:mx-8">Nicht gelöst.</p>
 						{/if}
 					</div>
 				</div>
