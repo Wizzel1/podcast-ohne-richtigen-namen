@@ -19,7 +19,7 @@
 	<title>Po(r)N Episoden</title>
 </svelte:head>
 
-<div class="grid grid-cols-3 lg:grid-cols-4 gap-4 p-4 m-5">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4 m-5">
 	{#each chunkedEpisodes as episodeList}
 		{@const firstItem = episodeList[0]}
 		{@const lastItem = episodeList[episodeList.length - 1]}
