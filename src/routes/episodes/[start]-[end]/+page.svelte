@@ -6,7 +6,10 @@
 
 <div class="grid grid-flow-row grid-cols-1 sm:grid-cols-2 2xl:grid-cols-5 gap-4">
 	{#each episodes as item}
-		<div class="flex flex-col justify-between border-2 shadow-sm rounded-xl p-4 md:p-5 border-gray-500">
+		<a
+			class="flex flex-col justify-between border-2 shadow-sm rounded-xl p-4 md:p-5 border-gray-500"
+			href="/episodes/{item.number}"
+		>
 			<h3 class="text-lg font-bold text-gray-800 dark:text-white">
 				#{item.number} |
 				{item.title}
@@ -16,15 +19,13 @@
 		</p> -->
 			{#if item.questions}
 				{#each item.questions as question}
-					<!-- <p class="text-sm font-normal mt-2">{question.question}</p> -->
 					<p class="mt-2 text-gray-500 dark:text-gray-400">
 						{question.question}
 					</p>
 				{/each}
 			{/if}
-			<a
+			<div
 				class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-				href="/episodes/{item.number}"
 			>
 				Zur Folge
 				<svg
@@ -39,8 +40,8 @@
 					stroke-linecap="round"
 					stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg
 				>
-			</a>
-		</div>
+			</div>
+		</a>
 
 		<!-- <li>
 			<a
