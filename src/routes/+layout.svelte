@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import '../app.css';
 </script>
 
@@ -11,16 +12,34 @@
 	<h1 class="text-xl font-semibold mx-2 my-5">Podcast ohne (richtigen) Namen</h1>
 </div>
 
-<nav class="flex justify-around my-5 mx-10">
-	<a href="/">Home</a>
-	<a href="/episodes">Episoden</a>
-	<a href="/ranking">Rangliste</a>
-	<a target="_blank" rel="noreferrer noopener" href="https://podcastohnerichtigennamen.de/shop/"
-		>Merch Shop</a
-	>
-	<a target="_blank" rel="noreferrer noopener" href="https://www.patreon.com/podcastohnenamen"
-		>Patreon</a
-	>
+<nav>
+	<div class="flex justify-center mx-10 gap-2">
+		<a class:bg-blue-900={$page.url.pathname === '/'} class="hover:bg-blue-900 rounded p-3" href="/"
+			>Home</a
+		>
+		<a
+			class:bg-blue-900={$page.url.pathname === '/episodes'}
+			class="hover:bg-blue-900 rounded p-3"
+			href="/episodes">Episoden</a
+		>
+		<a
+			class:bg-blue-900={$page.url.pathname === '/ranking'}
+			class="hover:bg-blue-900 rounded p-3"
+			href="/ranking">Rangliste</a
+		>
+		<a
+			class="hover:bg-blue-900 rounded p-3"
+			target="_blank"
+			rel="noreferrer noopener"
+			href="https://podcastohnerichtigennamen.de/shop/">Merch Shop</a
+		>
+		<a
+			class="hover:bg-blue-900 rounded p-3"
+			target="_blank"
+			rel="noreferrer noopener"
+			href="https://www.patreon.com/podcastohnenamen">Patreon</a
+		>
+	</div>
 </nav>
 
 <div class="mx-2 md:mx-10 my-5">
