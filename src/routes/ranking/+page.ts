@@ -21,8 +21,8 @@ export const load = async () => {
 
 	const parsed = schema.safeParse(result);
 
-	if (!parsed.success) throw error(500, "Something's wrong with the data");
-	if (parsed.data.length === 0) throw error(404, 'Host not found');
+	if (!parsed.success) error(500, "Something's wrong with the data");
+	if (parsed.data.length === 0) error(404, 'Host not found');
 
 	return {
 		rankings: parsed.data

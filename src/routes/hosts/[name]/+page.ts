@@ -28,8 +28,8 @@ export const load = async (event) => {
 
 	const parsed = schema.safeParse(result);
 
-	if (!parsed.success) throw error(500, "Something's wrong with the data");
-	if (parsed.data.length === 0) throw error(404, 'Host not found');
+	if (!parsed.success) error(500, "Something's wrong with the data");
+	if (parsed.data.length === 0) error(404, 'Host not found');
 
 	const sortedQuestions = parsed.data.sort((a, b) => {
 		const episodeNumberA = a.episodeNumber;

@@ -23,7 +23,7 @@ export const load = async ({ params }) => {
           }
         `);
 
-	if (episodes.length === 0) throw error(404, 'Episode not found');
+	if (episodes.length === 0) error(404, 'Episode not found');
 
 	return {
 		episode: episodes[0]
