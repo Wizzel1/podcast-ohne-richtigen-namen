@@ -1,10 +1,5 @@
 <script lang="ts">
 	import '../app.css';
-	import type { Config } from '@sveltejs/adapter-vercel';
-
-	export const config: Config = {
-		runtime: 'nodejs18.x'
-	};
 </script>
 
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm py-4">
