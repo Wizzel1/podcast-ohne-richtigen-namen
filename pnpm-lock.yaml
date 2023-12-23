@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@preline/accordion':
+    specifier: ^2.0.1
+    version: 2.0.1
   '@sanity/client':
     specifier: ^6.10.0
     version: 6.10.0
@@ -651,6 +654,10 @@ packages:
 
   /@popperjs/core@2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+    dev: false
+
+  /@preline/accordion@2.0.1:
+    resolution: {integrity: sha512-Tp8lAtsbye6GnOff1RcsM1vOz0dYf/b/wRe/2fGjxL4baoP6TfWHwQlGk5Uvb2s6JxyDOFFxdM2sfHqAeneQIg==}
     dev: false
 
   /@rollup/pluginutils@5.1.0:

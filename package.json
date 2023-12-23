@@ -39,6 +39,7 @@
     },
     "type": "module",
     "dependencies": {
+        "@preline/accordion": "^2.0.1",
         "@sanity/client": "^6.10.0",
         "preline": "^2.0.2",
         "zod": "^3.22.4"
