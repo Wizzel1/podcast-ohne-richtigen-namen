@@ -35,7 +35,7 @@
 
 <div class="flex justify-center">
 	{#if questions}
-		<div class="mx-auto max-w-[80%] lg:max-w-[60%] md:min-w-1/2 rounded-xl border" {...$root}>
+		<div class="mx-auto max-w-[80%] lg:max-w-[60%] md:min-w-1/2 rounded-xl border-2 border-gray-600 divide-y-2 divide-gray-600" {...$root}>
 			{#each questions as question, i}
 				{@const id = `item-${i}`}
 				<div
@@ -47,7 +47,7 @@
 						<button
 							use:melt={$trigger(id)}
 							class="flex flex-1 cursor-pointer items-center justify-between
-						 px-5 py-5 text-base font-medium leading-none
+						 px-5 py-5 text-base font-medium leading-none text-start
 						 transition-colors hover:bg-neutral-800 focus:!ring-0
 						focus-visible:text-magnum-800"
 						>
