@@ -1,7 +1,16 @@
 <script lang="ts">
+	import { createAccordion, melt } from '@melt-ui/svelte';
+	import { slide } from 'svelte/transition';
 	export let data;
 
 	$: ({ number, title, spotifyUrl, questions } = data.episode);
+
+	const {
+		elements: { content, item, trigger, root },
+		helpers: { isSelected }
+	} = createAccordion({
+		multiple: true
+	});
 </script>
 
 <svelte:head>
@@ -25,8 +34,59 @@
 </div>
 
 <div class="flex justify-center">
-	<div class="flex flex-col divide-y max-w-[80%] lg:max-w-[60%] md:min-w-1/2">
-		<div class="hs-accordion-group">
+	{#if questions}
+		<div class="mx-auto max-w-[80%] lg:max-w-[60%] md:min-w-1/2 rounded-xl border" {...$root}>
+			{#each questions as question, i}
+				{@const id = `item-${i}`}
+				<div
+					use:melt={$item(id)}
+					class="overflow-hidden transition-colors first:rounded-t-xl
+			  last:rounded-b-xl"
+				>
+					<h2 class="flex">
+						<button
+							use:melt={$trigger(id)}
+							class="flex flex-1 cursor-pointer items-center justify-between
+						 px-5 py-5 text-base font-medium leading-none
+						 transition-colors hover:bg-neutral-800 focus:!ring-0
+						focus-visible:text-magnum-800"
+						>
+							Frage #{i + 1} - {question?.question}
+						</button>
+					</h2>
+					{#if $isSelected(id)}
+						<div
+							class="overflow-hidden bg-neutral-800 text-sm"
+							use:melt={$content(id)}
+							transition:slide
+						>
+							{#if question.answerLink}
+								<a
+									class="px-5 py-8 w-fit text-blue-400 hover:underline"
+									rel="noreferrer noopener"
+									target="_blank"
+									href={question.answerLink}
+								>
+									{question.answer}
+								</a>
+							{:else}
+								<p class="px-5 py-8 w-fit">
+									{question.answer}
+								</p>
+							{/if}
+							<div class="px-5 py-8">
+								<p>Gelöst von</p>
+								{question.solvedBy?.name}
+							</div>
+						</div>
+					{/if}
+				</div>
+			{/each}
+		</div>
+	{/if}
+
+	<!-- <div class="flex flex-col divide-y max-w-[80%] lg:max-w-[60%] md:min-w-1/2"> -->
+	<!-- <div class="hs-accordion-group">
 			{#if questions}
 				{#each questions as question, index}
 					{@const accordionId = number + index}
@@ -73,9 +133,9 @@
 								rel="noreferrer noopener">{question?.answer}</a
 							>
 						</div>
-					</div>
+					</div> -->
 
-					<!-- <div class="hs-accordion" id="hs-basic-heading-three">
+	<!-- <div class="hs-accordion" id="hs-basic-heading-three">
 						<button
 							class="hs-accordion-toggle hs-accordion-active:text-blue-600 py-3 inline-flex items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-gray-200 dark:hover:text-gray-400 dark:focus:outline-none dark:focus:text-gray-400"
 							aria-controls="hs-basic-collapse-three"
@@ -118,10 +178,10 @@
 							</p>
 						</div>
 					</div> -->
-				{/each}
-			{/if}
-		</div>
-	</div>
+	<!-- {/each} -->
+	<!-- {/if} -->
+	<!-- </div> -->
+	<!-- </div> -->
 </div>
 
 {#if spotifyUrl}
