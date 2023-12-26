@@ -8,9 +8,7 @@
 	const {
 		elements: { content, item, trigger, root },
 		helpers: { isSelected }
-	} = createAccordion({
-		multiple: true
-	});
+	} = createAccordion({});
 </script>
 
 <svelte:head>
@@ -35,7 +33,10 @@
 
 <div class="flex justify-center">
 	{#if questions}
-		<div class="mx-auto max-w-[80%] lg:max-w-[60%] md:min-w-1/2 rounded-xl border-2 border-gray-600 divide-y-2 divide-gray-600" {...$root}>
+		<div
+			class="mx-auto max-w-[90%] lg:max-w-[60%] md:min-w-1/2 rounded-xl border-2 border-gray-600 divide-y-2 divide-gray-600"
+			{...$root}
+		>
 			{#each questions as question, i}
 				{@const id = `item-${i}`}
 				<div
@@ -62,7 +63,7 @@
 						>
 							{#if question.answerLink}
 								<a
-									class="px-5 py-8 w-fit text-blue-400 hover:underline"
+									class="flex text-start px-5 py-6 w-fit text-blue-400 hover:underline"
 									rel="noreferrer noopener"
 									target="_blank"
 									href={question.answerLink}
@@ -70,7 +71,7 @@
 									{question.answer}
 								</a>
 							{:else}
-								<p class="px-5 py-8 w-fit">
+								<p class="px-5 py-6 w-fit">
 									{question.answer}
 								</p>
 							{/if}
