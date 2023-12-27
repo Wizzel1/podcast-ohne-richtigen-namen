@@ -8,7 +8,7 @@
 		aria-label="Global"
 	>
 		<div class="flex items-center justify-between">
-			<a class="inline-flex items-center gap-x-2 text-xl font-semibold dark:text-white" href="/">
+			<a class="inline-flex items-center gap-x-2 text-xl font-semibold" href="/">
 				<enhanced:img
 					class="w-20 rounded-xl h-auto"
 					src="../lib/assets/podcast-ohne-richtigen-namen-logo.jpg"
@@ -20,7 +20,7 @@
 			<div class="sm:hidden">
 				<button
 					type="button"
-					class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-gray-700 dark:text-white dark:hover:bg-white/10 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+					class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
 					data-hs-collapse="#navbar-image-and-text-2"
 					aria-controls="navbar-image-and-text-2"
 					aria-label="Toggle navigation"
@@ -65,26 +65,17 @@
 			<div
 				class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5"
 			>
+				<a class="font-medium text-gray-400 hover:text-gray-200" href="/">Home</a>
+				<a class="font-medium text-gray-400 hover:text-gray-200" href="/episodes">Episoden</a>
+				<a class="font-medium text-gray-400 hover:text-gray-200" href="/ranking">Rangliste</a>
 				<a
-					class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-					href="/">Home</a
-				>
-				<a
-					class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-					href="/episodes">Episoden</a
-				>
-				<a
-					class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-					href="/ranking">Rangliste</a
-				>
-				<a
-					class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+					class="font-medium text-gray-400 hover:text-gray-200"
 					target="_blank"
 					rel="noreferrer noopener"
 					href="https://podcastohnerichtigennamen.de/shop/">Merch Shop</a
 				>
 				<a
-					class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+					class="font-medium text-gray-400 hover:text-gray-200"
 					target="_blank"
 					rel="noreferrer noopener"
 					href="https://www.patreon.com/podcastohnenamen">Patreon</a
@@ -98,7 +89,7 @@
 	<slot />
 </div>
 
-<footer class="mb-5 text-center">
+<footer class="my-10 text-center">
 	Made with 🤍 by
 	<a target="_blank" rel="noreferrer noopener" href="https://twitter.com/Wizzel6">Christian R</a>
 </footer>
