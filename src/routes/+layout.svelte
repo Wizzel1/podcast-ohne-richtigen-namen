@@ -100,9 +100,5 @@
 
 <footer class="mb-5 text-center">
 	Made with 🤍 by
-	<a
-		target="_blank"
-		rel="noreferrer noopener"
-		href="https://www.linkedin.com/in/christian-r%C3%B6benack-603940197/">Christian R</a
-	>
+	<a target="_blank" rel="noreferrer noopener" href="https://twitter.com/Wizzel6">Christian R</a>
 </footer>
