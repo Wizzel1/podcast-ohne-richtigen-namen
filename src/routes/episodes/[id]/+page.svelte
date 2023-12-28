@@ -75,9 +75,15 @@
 									{question.answer}
 								</p>
 							{/if}
-							<div class="px-5 py-8">
-								<p>Gelöst von</p>
-								{question.solvedBy?.name}
+							<div class="flex flex-row px-5 py-8">
+								{#if question.solvedBy}
+									<p>Gelöst von</p>
+									<a class="text-blue-400 hover:underline" href="/hosts/{question.solvedBy.name}">
+										{question.solvedBy?.name}
+									</a> 
+								{:else}
+									<p>Nicht gelöst.</p>
+								{/if}
 							</div>
 						</div>
 					{/if}
