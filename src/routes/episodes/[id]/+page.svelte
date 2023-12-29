@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { createAccordion, melt } from '@melt-ui/svelte';
 	import { slide } from 'svelte/transition';
+	import { LucideChevronLeft, LucideChevronRight, LucideX } from 'lucide-svelte';
+	import { goto } from '$app/navigation';
 	export let data;
 
 	$: ({ number, title, spotifyUrl, questions } = data.episode);
@@ -15,23 +17,9 @@
 	<title>Folge {number} - {title}</title>
 </svelte:head>
 
-<div class="flex flex-row justify-around my-11">
-	<div>
-		<button>
-			<a href="/episodes/{number - 1}">{'<'}</a>
-		</button>
-	</div>
-	<h2 class="text-3xl font-bold text-center">#{number} {title}</h2>
-	<div>
-		<div>
-			<button>
-				<a href="/episodes/{number + 1}">{'>'}</a>
-			</button>
-		</div>
-	</div>
-</div>
+<h2 class="text-3xl my-11 font-bold text-center">#{number} {title}</h2>
 
-<div class="flex justify-center">
+<div class="flex justify-center my-11">
 	{#if questions}
 		<div
 			class="mx-auto max-w-[90%] lg:max-w-[60%] md:min-w-1/2 rounded-xl border-2 border-gray-600 divide-y-2 divide-gray-600"
@@ -80,7 +68,7 @@
 									<p>Gelöst von</p>
 									<a class="text-blue-400 hover:underline" href="/hosts/{question.solvedBy.name}">
 										{question.solvedBy?.name}
-									</a> 
+									</a>
 								{:else}
 									<p>Nicht gelöst.</p>
 								{/if}
@@ -90,6 +78,39 @@
 				</div>
 			{/each}
 		</div>
+	{/if}
+</div>
+
+<div class="flex flex-row justify-center">
+	{#if number > 1}
+		<button
+			type="button"
+			class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+		>
+			<a href="/episodes/{number - 1}"><LucideChevronLeft class="w-4 h-4" /></a>
+		</button>
+	{/if}
+
+	<button
+		type="button"
+		class="px-3 mx-2 inline-flex items-center gap-x-2 text-sm rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+		on:click={async () => {
+			const max = 251;
+			const min = 1;
+			const random = Math.floor(Math.random() * (max - min + 1)) + min;
+			await goto(`/episodes/${random}`);
+		}}
+	>
+		Zufällige Folge
+	</button>
+
+	{#if number < 251}
+		<button
+			type="button"
+			class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+		>
+			<a href="/episodes/{number + 1}"><LucideChevronRight class="w-4 h-4" /></a>
+		</button>
 	{/if}
 </div>
 
