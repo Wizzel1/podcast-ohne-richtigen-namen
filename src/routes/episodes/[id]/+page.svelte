@@ -95,7 +95,7 @@
 		type="button"
 		class="px-3 mx-2 inline-flex items-center gap-x-2 text-sm rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
 		on:click={async () => {
-			const max = 251;
+			const max = 252;
 			const min = 1;
 			const random = Math.floor(Math.random() * (max - min + 1)) + min;
 			await goto(`/episodes/${random}`);
