@@ -8,7 +8,6 @@
 	$: ({ number, title, spotifyUrl, questions } = data.episode);
 	$: ({ totalEpisodeCount } = data);
 
-
 	const {
 		elements: { content, item, trigger, root },
 		helpers: { isSelected }
@@ -67,10 +66,12 @@
 							{/if}
 							<div class="flex flex-row px-5 py-8">
 								{#if question.solvedBy}
-									<p>Gelöst von</p>
-									<a class="text-blue-400 hover:underline" href="/hosts/{question.solvedBy.name}">
-										{question.solvedBy?.name}
-									</a>
+									<p>
+										Gelöst von
+										<a class="text-blue-400 hover:underline" href="/hosts/{question.solvedBy.name}">
+											{question.solvedBy?.name}
+										</a>
+									</p>
 								{:else}
 									<p>Nicht gelöst.</p>
 								{/if}
