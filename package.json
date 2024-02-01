@@ -42,7 +42,7 @@
     "type": "module",
     "dependencies": {
         "@sanity/client": "^6.12.3",
-        "lucide-svelte": "^0.320.0",
+        "lucide-svelte": "^0.321.0",
         "preline": "^2.0.3",
         "zod": "^3.22.4"
     }
