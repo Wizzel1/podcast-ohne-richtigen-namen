@@ -23,14 +23,14 @@ export const load = async ({ params }) => {
           }
         `);
 
-	// const totalEpisodeCount = await sanityClient.fetch<number>(`
-	//     count(*[_type == "episode"])
-	//     `);
+	const totalEpisodeCount = await sanityClient.fetch<number>(`
+	    count(*[_type == "episode"])
+	    `);
 
 	if (episodes.length === 0) error(404, 'Episode not found');
 
 	return {
 		episode: episodes[0],
-		totalEpisodeCount: 255
+		totalEpisodeCount: totalEpisodeCount
 	};
 };
