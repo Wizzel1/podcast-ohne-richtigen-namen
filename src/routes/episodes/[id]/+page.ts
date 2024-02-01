@@ -31,6 +31,6 @@ export const load = async ({ params }) => {
 
 	return {
 		episode: episodes[0],
-		totalEpisodeCount: 253
+		totalEpisodeCount: 255
 	};
 };
