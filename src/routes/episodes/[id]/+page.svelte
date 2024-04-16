@@ -18,7 +18,7 @@
 	<title>Folge {number} - {title}</title>
 </svelte:head>
 
-<h2 class="text-3xl my-11 font-bold text-center">#{number} {title}</h2>
+<h2 class="text-3xl my-11 font-bold text-center">#{number}: {title}</h2>
 
 <div class="flex justify-center my-11">
 	{#if questions}
