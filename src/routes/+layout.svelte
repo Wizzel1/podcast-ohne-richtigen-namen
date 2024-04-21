@@ -11,7 +11,7 @@
 			<a class="inline-flex items-center gap-x-2 text-xl font-semibold" href="/">
 				<enhanced:img
 					class="w-20 rounded-xl h-auto"
-					src="../lib/assets/podcast-ohne-richtigen-namen-logo.jpg"
+					src="../lib/assets/podcast-ohne-namen.png"
 					alt="Logo"
 				>
 					Podcast ohne (richtigen) Namen
