@@ -88,7 +88,7 @@
 	{#if number > 1}
 		<button
 			type="button"
-			class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+			class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-[#40376C] text-white hover:bg-[#554a8f] disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
 		>
 			<a href="/episodes/{number - 1}"><LucideChevronLeft class="w-4 h-4" /></a>
 		</button>
@@ -96,7 +96,7 @@
 
 	<button
 		type="button"
-		class="px-3 mx-2 inline-flex items-center gap-x-2 text-sm rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+		class="px-3 mx-2 inline-flex items-center gap-x-2 text-sm rounded-lg border border-transparent bg-[#40376C] text-white hover:bg-[#554a8f] disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
 		on:click={async () => {
 			const max = totalEpisodeCount;
 			const min = 1;
@@ -110,7 +110,7 @@
 	{#if number < totalEpisodeCount}
 		<button
 			type="button"
-			class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+			class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-[#40376C] text-white hover:bg-[#554a8f] disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
 		>
 			<a href="/episodes/{number + 1}"><LucideChevronRight class="w-4 h-4" /></a>
 		</button>
