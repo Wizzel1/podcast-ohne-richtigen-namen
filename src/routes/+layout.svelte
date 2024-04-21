@@ -89,7 +89,4 @@
 	<slot />
 </div>
 
-<footer class="my-10 text-center">
-	Made with 🤍 by
-	<a target="_blank" rel="noreferrer noopener" href="https://twitter.com/Wizzel6">Christian R</a>
-</footer>
+
