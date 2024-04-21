@@ -85,6 +85,6 @@
 	</nav>
 </header>
 
-<div class="min-h-screen bg-base-200 mt-28">
+<div class="min-h-screen bg-base-200 mt-28 mx-8">
 	<slot />
 </div>
