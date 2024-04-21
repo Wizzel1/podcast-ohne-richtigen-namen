@@ -38,7 +38,7 @@
 							use:melt={$trigger(id)}
 							class="flex flex-1 cursor-pointer items-center justify-between
 						 px-5 py-5 text-base font-medium leading-none text-start
-						 transition-colors hover:bg-neutral-800 focus:!ring-0
+						 transition-colors focus:!ring-0
 						focus-visible:text-magnum-800"
 						>
 							Frage #{i + 1} - {question?.question}
@@ -52,7 +52,7 @@
 						>
 							{#if question.answerLink}
 								<a
-									class="flex text-start px-5 py-6 w-fit text-blue-400 hover:underline"
+									class="flex text-start px-5 py-6 w-fit text-[#F78208] hover:text-[#f7a308]"
 									rel="noreferrer noopener"
 									target="_blank"
 									href={question.answerLink}
@@ -68,7 +68,10 @@
 								{#if question.solvedBy}
 									<p>
 										Gelöst von
-										<a class="text-blue-400 hover:underline" href="/hosts/{question.solvedBy.name}">
+										<a
+											class="text-[#F78208] hover:text-[#f7a308]"
+											href="/hosts/{question.solvedBy.name}"
+										>
 											{question.solvedBy?.name}
 										</a>
 									</p>
